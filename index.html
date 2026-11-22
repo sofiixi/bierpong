@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="de">
 <head>
-<title>Bierpong-Turnier FSR</title>
+<title>Bierpong-Turnier</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
@@ -35,8 +35,9 @@ button{cursor:pointer}
 /* header */
 header{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px}
 .brand{display:flex;align-items:center;gap:14px;min-width:0}
-.fsr{display:flex;gap:4px}
-.fsr span{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-size:14px;color:#fff;border:3px solid rgba(0,0,0,.25)}
+.cups{display:flex;gap:4px}
+.cups span{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-size:14px;color:#3A1D04;background:radial-gradient(circle,var(--beer) 0 55%,var(--foam) 56% 62%,var(--red) 63%);border:2px solid #AF191C}
+.cups span:nth-child(even){transform:translateY(5px)}
 .brand h1{margin:0;font-family:var(--f-display);font-size:28px;line-height:1;letter-spacing:-.5px}
 .brand p{margin:2px 0 0;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
 nav{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
@@ -314,8 +315,8 @@ const view=()=>{const h=(location.hash||'').slice(1);return['teams','gruppen','k
 
 function headerHTML(v){
   return `<header>
-  <div class="brand"><div class="fsr" aria-hidden="true"><span style="background:var(--blue)">F</span><span style="background:var(--green)">S</span><span style="background:var(--red)">R</span></div>
-  <div><h1>Bierpong-Turnier</h1><p>20.11. · Haus 70 · auf ${S.settings.cups} Becher · ${S.settings.minutes} Min</p></div></div>
+  <div class="brand"><div class="cups" aria-hidden="true"><span>B</span><span>I</span><span>E</span><span>R</span></div>
+  <div><h1>Bierpong-Turnier</h1><p>auf ${S.settings.cups} Becher · ${S.settings.minutes} Min pro Runde</p></div></div>
   <nav aria-label="Bereiche">
    ${[['teams','Teams'],['gruppen','Gruppen'],['ko','K.-o.']].map(([k,l])=>`<a href="#${k}" ${v===k?'aria-current="page"':''}>${l}</a>`).join('')}
    <a href="#anzeige" class="show">Beamer-Anzeige ▶</a>

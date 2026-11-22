@@ -1,6 +1,8 @@
 # Bierpong-Turnier 🍻
 
-Turnierverwaltung für das Bierpong-Turnier des FSR Informatik (Uni Potsdam).
+**Live:** https://sofiixi.github.io/bierpong/
+
+Turnierverwaltung für Bierpong-Turniere.
 Eine einzige HTML-Datei, läuft offline im Browser – ohne Account, ohne Server.
 
 ## Funktionen
